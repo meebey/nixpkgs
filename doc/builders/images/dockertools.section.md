@@ -288,7 +288,7 @@ exportImage {
 }
 ```
 
-The parameters relative to the base image have the same synopsis as described in [buildImage](#ssec-pkgs-dockerTools-buildImage), except that `fromImage` is the only required argument in this case.
+The parameters relative to the base image have the same synopsis as described in [buildImage](#ssec-pkgs-dockerTools-buildImage), except that `fromImage` is the only required argument in this case..
 
 The `name` argument is the name of the derivation output, which defaults to `fromImage.name`.
 
@@ -302,7 +302,7 @@ buildImage {
 
   runAsRoot = ''
     #!${pkgs.runtimeShell}
-    ${shadowSetup}
+    ${pkgs.dockerTools.shadowSetup}
     groupadd -r redis
     useradd -r -g redis redis
     mkdir /data
